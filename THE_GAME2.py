@@ -1,167 +1,167 @@
-import random # 
-import time  #så att inte alla text kommer samma tid
+import random
+import time 
+import sys # jag behövde nånting så att alla text kommer inte till sammans. 
 import os
+# saker att göra 
+# första menu
+# välja difficult level
+# välja din gäadiator 
+# stamina system
+# mer ascii art
+def print_slow(text):
+    for char in text:
+        sys.stdout.write(char)
+        sys.stdout.flush()
+        time.sleep(0.02) 
+        
+    print()
 
-def clear_terminal(): #tabort text som behövs inte längre
+welcome_asicii="""
+ ██╗       ██╗ ███████╗ ██╗      ██╗      █████╗   █████╗   ███╗   ███╗ ███████╗   ████████╗ █████╗
+ ██║  ██╗  ██║ ██╔════╝ ██║      ██║      ██╔══██  ██╔══██╗ ████╗ ████║ ██╔════╝   ╚══██╔══╝██╔══██╗
+ ╚██╗████╗██╔╝ █████╗   ██║      ██║      ██║      ██║  ██║ ██╔████╔██║ █████╗        ██║   ██║  ██║
+  ████╔═████║  ██╔══╝   ██║      ██║      ██║  ██╗ ██║  ██║ ██║╚██╔╝██║ ██╔══╝        ██║   ██║  ██║
+  ╚██╔╝ ╚██╔╝  ███████╗ ███████╗ ███████╗ ╚█████╔╝ ╚█████╔╝ ██║ ╚═╝ ██║ ███████╗      ██║   ╚█████╔╝
+   ╚═╝   ╚═╝   ╚══════╝ ╚══════╝ ╚══════╝ ╚════╝    ╚════╝  ╚═╝     ╚═╝ ╚══════╝      ╚═╝    ╚════╝
+
+ █████╗  ██████╗  ███████╗ ███╗ ██╗   █████╗    █████╗  ███╗  ██╗████████╗██╗  █████╗  ██████╗
+██╔══██  ██╔══██╗ ██╔════╝ ████╗ ██║  ██╔══██╗  ██╔══██╗ ████╗ ██║╚══██╔══╝██║ ██╔══██  ██╔
+███████  ██████╔╝ █████╗   ██╔██╗██║  ███████║  ███████║ ██╔██╗██║   ██║   ██║ ██║      ╚█████╗
+██╔══██  ██╔══██╗ ██╔══╝   ██║╚████║  ██╔══██║  ██╔══██║ ██║╚████║   ██║   ██║ ██║  ██╗ ╚═══██╗
+██║  ██  ██║  ██║ ███████╗ ██║ ╚███║  ██║  ██║  ██║  ██║ ██║ ╚███║   ██║   ██║ █████╔╝ ██████
+╚═╝  ╚═╝ ╚═╝  ╚═╝ ╚══════╝ ╚═╝  ╚══╝  ╚═╝╚═╝    ╚═╝  ╚═╝ ╚═╝  ╚══╝   ╚═╝   ╚═╝ ╚════╝  ╚═════╝
+"""
+def clear_terminal():# ta bort gamla frågar
     if os.name == 'nt':
         os.system('cls')
 
-print("Du är gladiatorn Guts, nu ska du slåss mot gladiatorn Griffith. \nNi befinner er på en romersk arena omgivna av en förväntansfull publik. \nNi har inga vapen eller rustning utan du är klädd enbart i ett par korta läderbyxor,\nett par pälsstövlar och armband gjorda av läder.\nDin bara bronsfärgade bringa lyses upp av den starka solen.\npubliken som sitter runt omkring er ser förväntansfulla ut. \nGriffith ser ut att göra sig redo att gå till anfall. \nStriden kan börja.")
-time.sleep(0.8)
-print(".")
-time.sleep(0.5)
-print(".")
-time.sleep(0.3)
-print(".")
-
-print("Press enter to continue ")
-input("")
-time.sleep(1)
-print(".")
-time.sleep(1)
-print(".")
-
-clear_terminal()
-
 def setup_menu():
-    print("Welcome to the Gladiator Game!")
-    print("1. Start Game")
-    print("2. Exit")
-    choice = input("Choose an option? 1 or 2:  ")
-    if choice == "2":
-        exit()
+    print_slow("Welcome to the Gladiator Game!")
+    print_slow("1. Start Game")
+    print_slow("2. Exit")
 
-    print("Choose Your Gladiator:")
-    print("1. Fast Gladiator (higher dodge chance)")
-    print("2. Defensive Gladiator (higher health, better blocking)")
-    print("3. Balanced Gladiator (average stats)")
-    gladiator_choice= input("Choose your gladiator: ")
-    print("\nChoose your gladiator's gender:")
-    print("1. Male")
-    print("2. Female")
-    gender_choice = input("Choose gender (1-2): ")
-    time.sleep(0.8)
-    print(".")
-    time.sleep(0.8)
-    print(".")
+    while True:  # början 
+        choice = input("Choose an option (1 or 2): ")
+        if choice == "1":
+            print("Starting game:")
+            time.sleep(1)
+            print(".")
+            time.sleep(1)
+            print(".")
+            time.sleep(1)
+            print(".")
+            time.sleep(1)
+            print(".")
+            time.sleep(1)
+            print(".")
+            print(welcome_asicii)
+            time.sleep(1)
+            time.sleep(1)
+            print(".")
+            time.sleep(1)
+            print(".")
+            time.sleep(1)
+            print(".")
+            time.sleep(1)
+            print(".")
+            time.sleep(1)
+            print(".")
+            
+            break  
+        elif choice == "2":
+            print_slow("Exiting game:")
+            print_slow(".")
+            time.sleep(1)
+            print_slow(".")
+            time.sleep(1)
+            print_slow(".")
+            time.sleep(1)
+            exit()  
+        else:
+            print_slow("Invalid choice. Try again.")
+
+def difficulty_level():
+    my_hp = 50
+    opps_hp = 50
     clear_terminal()
+    print_slow("Choose difficulty level: ")
+    print_slow("1: Easy\n2: Medium\n3: Hard")
 
-    return gladiator_choice, gender_choice 
+    while True: 
+            difficulty_choice = int(input("Choose a number (1, 2, or 3): "))
+            if difficulty_choice == 1:
+                my_hp += 20
+                opps_hp -= 10
+                print_slow("Easy mode selected. Your HP increased by 20, opponent's HP decreased by 10.")
+                time.sleep(5)
+                break  
+            elif difficulty_choice == 2:
+                my_hp += 10
+                print_slow("Medium mode selected. Your HP increased by 10.")
+                time.sleep(5)
+                break
+            elif difficulty_choice == 3:
+                print_slow("Hard mode selected. No changes to HP.")
+                time.sleep(5)
+                break
+            else:
+                print_slow("Invalid choice. Please choose one of the options.")
+    clear_terminal()
+    print_slow(f"Chosen difficulty level: {difficulty_choice}")
+    print_slow(f"My HP: {my_hp}")
+    print_slow(f"Opponent's HP: {opps_hp}")
+    return difficulty_choice, my_hp, opps_hp
+
+def select_gladiator():
+    print_slow("Choose Your Gladiator:")
+    print_slow("1. Dimachaerius (tvåsvärdskämpe) - had little armor and fought with two swords\nFast Gladiator (higher dodge chance)") #stats för a fast gladiator???
+    print_slow("2. Secutor (förföljaren) - heavily armed gladiator\n   Defensive Gladiator") #stats för defensiva gladiator ???
+    print_slow("3. Gladiatrix - a female gladiator")# stats för female????
+
+    gladiator_choice = ""
+    while gladiator_choice not in ("1", "2", "3"):
+        gladiator_choice = input("Choose your gladiator (1, 2, or 3): ")
+        if gladiator_choice not in ("1", "2", "3"):
+            print_slow("Invalid choice. Try again.")
+
+    print_slow(f"You chose gladiator option {gladiator_choice}.")
+    return gladiator_choice
+
+
+# kallar alla funktione
 setup_menu()
-    
-
-guts_hp = 4
-griffith_hp = 4
-print("Du har just nu " + str(guts_hp) + " hälsopoäng kvar.")
-
-print("Griffith har " + str(griffith_hp) + " hälsopoäng kvar.")
-
-val = ("slag", "kast", "spark")
-rankings = {
-    "slag": "spark",  # slag beats spark
-    "spark": "kast",  # spark beats kast
-    "kast": "slag"    # kast beats slag
-}
-#ascii om du förlurar eller vinnar
-
-lose_ascii="""
+difficulty_level()
+select_gladiator()
 
 
-$$\     $$\  $$$$$$\  $$\   $$\       $$\       $$$$$$\   $$$$$$\  $$$$$$$$\       $$\       $$\       $$\ 
-\$$\   $$  |$$  __$$\ $$ |  $$ |      $$ |     $$  __$$\ $$  __$$\ $$  _____|      $$ |      $$ |      $$ |
- \$$\ $$  / $$ /  $$ |$$ |  $$ |      $$ |     $$ /  $$ |$$ /  \__|$$ |            $$ |      $$ |      $$ |
-  \$$$$  /  $$ |  $$ |$$ |  $$ |      $$ |     $$ |  $$ |\$$$$$$\  $$$$$\          $$ |      $$ |      $$ |
-   \$$  /   $$ |  $$ |$$ |  $$ |      $$ |     $$ |  $$ | \____$$\ $$  __|         \__|      \__|      \__|
-    $$ |    $$ |  $$ |$$ |  $$ |      $$ |     $$ |  $$ |$$\   $$ |$$ |                                    
-    $$ |     $$$$$$  |\$$$$$$  |      $$$$$$$$\ $$$$$$  |\$$$$$$  |$$$$$$$$\       $$\       $$\       $$\ 
-    \__|     \______/  \______/       \________|\______/  \______/ \________|      \__|      \__|      \__|  
-    
-    
-    """
-
-win_ascii=""" 
 
 
-                                                   __                  __        __        __ 
-                                                  /  |                /  |      /  |      /  |
- __    __   ______   __    __        __   __   __ $$/  _______        $$ |      $$ |      $$ |
-/  |  /  | /      \ /  |  /  |      /  | /  | /  |/  |/       \       $$ |      $$ |      $$ |
-$$ |  $$ |/$$$$$$  |$$ |  $$ |      $$ | $$ | $$ |$$ |$$$$$$$  |      $$ |      $$ |      $$ |
-$$ |  $$ |$$ |  $$ |$$ |  $$ |      $$ | $$ | $$ |$$ |$$ |  $$ |      $$/       $$/       $$/ 
-$$ \__$$ |$$ \__$$ |$$ \__$$ |      $$ \_$$ \_$$ |$$ |$$ |  $$ |       __        __        __ 
-$$    $$ |$$    $$/ $$    $$/       $$   $$   $$/ $$ |$$ |  $$ |      /  |      /  |      /  |
- $$$$$$$ | $$$$$$/   $$$$$$/         $$$$$/$$$$/  $$/ $$/   $$/       $$/       $$/       $$/ 
-/  \__$$ |                                                                                    
-$$    $$/                                                                                     
- $$$$$$/        
-     
-
- """
 
 
-while guts_hp > 0 and griffith_hp > 0:
-    guts = input("Vilket väljer du: slag, spark eller kast? ").lower()
-
-    if guts not in val:
-        print("Ogiltigt val.")
-        continue 
-
-    griffith = random.choice(val)
-    
-    print("GRIFFITH valde:", griffith)
-    print("Du valde:", guts)
-    clear_terminal()
-
-    if guts == griffith:
-        print("Ni valde samma. Båda missar. ni båda backar och gör er redo att att slå igen.")
-
-    elif rankings[guts] == griffith:
-        if guts == "slag":
-            print("Du slår Griffith i ansiktet. Griffith förlorar 2 hälsopoäng.")
-        elif guts == "spark":
-            print("Du sparkar Griffith i magen. Griffith förlorar 2 hälsopoäng.")
-        elif guts == "kast":
-            print("Du kastar Griffith i golvet. Griffith förlorar 2 hälsopoäng.")
-        griffith_hp -= 2
-      
-   
-    else:
-        if griffith == "slag":
-            print("Griffith slår dig. Du förlorar 2 hälsopoäng.")
-        elif griffith == "spark":
-            print("Griffith sparkar dig i revbenen. Du förlorar 2 hälsopoäng.")
-        elif griffith == "kast":
-            print("Griffith kastar dig i golvet. Du förlorar 2 hälsopoäng.")
-        guts_hp -= 2
-        
-
-    print("Du har just nu " + str(guts_hp) + " hälsopoäng kvar.")
-    print("Griffith har " + str(griffith_hp) + " hälsopoäng kvar.")
-
-    if griffith_hp <= 0:
-        print("Striden är över! JAG VAN WHOOOOOO!")
-        time.sleep(1)
-        print(".")
-        time.sleep(1)
-        print(".")
-        time.sleep(1)
-        print(".")
-        time.sleep(1)
-        print(win_ascii)
-        break
+# print("Du har just nu " + str(guts_hp) + " hälsopoäng kvar.")
+# time.sleep(1)
+# print("Din opps har " + str(griffith_hp) + " hälsopoäng kvar.")
+# time.sleep(1)
 
 
-    if guts_hp <= 0:
-        print("Striden är slut, Griffith vann!")
-        time.sleep(1)
-        print(".")
-        time.sleep(1)
-        print(".")
-        time.sleep(1)
-        print(".")
-        time.sleep(1)
-        print(lose_ascii)
-        
-        break
+# while True:  
+#     opps -= random.choice([0, 1])
 
+    # print("\nDu har just nu " + str(my_hp) + " hälsopoäng kvar.")
+#     time.sleep(1)
+#     print("din opps har " + str(opps_hp) + " hälsopoäng kvar.")
+#     time.sleep(1)
+
+#     # vad ska hända om du vinner eller om din opps vinner
+#     if opps_hp <= 0:
+#         print("Striden är över! JAG VAN WHOOOOOO!")
+#         time.sleep(1)
+#         print(win_ascii)
+#         break
+
+#     if my_hp <= 0:
+#         print("Striden är slut, din opps vann!")
+#         time.sleep(1)
+#         print(lose_ascii)
+#         break
 
